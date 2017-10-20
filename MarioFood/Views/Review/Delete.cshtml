@@ -1,0 +1,10 @@
+﻿@model MarioFood.Models.Review
+
+<h2>Delete @Model.ReviewAuthor's Review?</h2>
+
+@using (Html.BeginForm())
+{
+    <input type ="submit" value="Delete" class = "btn btn-danger">
+    <input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Details", "Product", new { ProductId = @Model.ProductId })'" />
+}
+

@@ -1,0 +1,25 @@
+﻿@model MarioFood.Models.Review
+
+<div class="jumbotron"><h2>Details for @Model.ReviewName</h2></div>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Body</th>
+            <th>Author</th>
+            <th>Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Model.ReviewContentBody</td>
+            <td>@Model.ReviewAuthor</td>
+            <td>@Model.ReviewRating</td>
+        </tr>
+    </tbody>
+</table>
+
+<input type="button" class="btn btn-warning" value="View Product" onclick="location.href='@Url.Action("Details", "Product", new { ProductId = @Model.ProductId })'" />
+
+
+<input type="button" class="btn btn-warning" value="View All Reviews" onclick="location.href='@Url.Action("Index", "Review")'" />

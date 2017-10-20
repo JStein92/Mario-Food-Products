@@ -1,0 +1,11 @@
+﻿@model MarioFood.Models.Product
+
+<h2>Are you sure you want to delete @Model.ProductName?</h2>
+
+@using (Html.BeginForm())
+{
+    <input type ="submit" value="Delete" class = "btn btn-danger">
+    <input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Index")'" />
+}
+
+

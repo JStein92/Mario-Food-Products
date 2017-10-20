@@ -1,0 +1,25 @@
+﻿@model MarioFood.Models.Product
+
+<div class="page-header"><h2>Reviews for @Model.ProductName Product</h2></div>
+<div class="card-deck">
+    @foreach (var review in @Model.Reviews)
+    {
+
+        <div class="card card-inverse card-bg mb-3 text-center">
+            <div class="card-block">
+                <h1 style="color:black">@review.ReviewAuthor</h1>
+                <hr />
+                <blockquote class="card-blockquote">
+                    <h2>@review.ReviewRating/5</h2>
+                    <h2>@review.ReviewContentBody</h2>
+                   
+                    <h5>@Html.ActionLink("Delete", "Delete", "Review", new { ReviewId = review.ReviewId }) | @Html.ActionLink("Update", "Update", "Review", new { ReviewId = review.ReviewId })</h5>
+                </blockquote>
+            </div>
+        </div>
+    }
+</div>
+<input type="button" class="btn btn-info" value="Add Review" onclick="location.href='@Url.Action("Create", "Review", new {ProductId = @Model.ProductId})'" />
+
+
+<input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Index")'" />

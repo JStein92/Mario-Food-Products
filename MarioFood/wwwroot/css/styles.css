@@ -1,0 +1,25 @@
+﻿.card h1, h2,h3,h4{
+   color:black;
+
+}
+.card{
+    margin:10px;
+    background-color:aliceblue;
+}
+
+.about{
+    padding:50px;
+    background-color:lightgray;
+    margin:40px;
+}
+
+.jumbotron {
+    background-image: url("https://static1.squarespace.com/static/5654b4fce4b0c0b1609a43f7/t/56d0b456b09f95cc0f31da34/1456518231234/italy_venice.jpg?format=2500w");
+    background-size: cover;
+    background-position: center;
+}
+.jumbotron h1{
+    font-size:6em;
+    color:whitesmoke;
+    text-shadow: 5px 5px 5px black;
+}

@@ -1,0 +1,19 @@
+﻿@model MarioFood.Models.Product
+
+<div class="jumbotron"><h1>Create a new Product</h1></div>
+
+@using (Html.BeginForm())
+{
+    <label>Product Name</label>
+    @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+
+    <label>Cost</label>
+    @Html.EditorFor(model => model.ProductCost, new { htmlAttributes = new { @class = "form-control" } })
+
+    <label>Country</label>
+    @Html.EditorFor(model => model.ProductCountry, new { htmlAttributes = new { @class = "form-control" } })
+
+    <input type ="submit" value="Create" class="btn btn-success"/>
+    <input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Index")'" />
+}
+

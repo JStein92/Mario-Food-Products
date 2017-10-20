@@ -1,0 +1,20 @@
+﻿@model MarioFood.Models.Review
+
+<div class="jumbotron"><h2>Create a new Review for @ViewBag.product.ProductName</h2></div>
+
+@using (Html.BeginForm())
+{
+    <label>Name on Review</label>
+    @Html.EditorFor(model => model.ReviewAuthor, new { htmlAttributes = new { @class = "form-control" } })
+
+    <label>Review Content</label>
+    @Html.EditorFor(model => model.ReviewContentBody, new { htmlAttributes = new { @class = "form-control", maxlength = "250", minlength = "50" } })
+
+    <label>Rating out of 5</label>
+    @Html.EditorFor(model => model.ReviewRating, new { htmlAttributes = new { @class = "form-control", min = 1, max = 5 } })
+
+    <input type ="submit" value="Create" class="btn btn-success"/>
+
+    <input type="button" class="btn btn-warning" value="Back" onclick="location.href='@Url.Action("Details", "Product", new {ProductId = @ViewBag.product.ProductId })'" />
+}
+

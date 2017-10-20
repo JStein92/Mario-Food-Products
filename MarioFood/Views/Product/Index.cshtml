@@ -1,0 +1,39 @@
+﻿@model List<MarioFood.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2 class="page-header">Our Fine Products</h2>
+
+
+<div class="about">
+
+        <h4>About our Products</h4>
+        <p>Mario's Specialty Food Products are perfect for any occasion. Wedding, family reuinion, Thanksgiving, Canadian Thanksgiving... you show up, we'll take care of the rest.</p>
+
+</div>
+
+
+<div class="card-group">
+    @foreach (var Product in @Model)
+    {
+        <br>
+        <div class="card card-inverse card-bg">
+            <div class="card-block">
+                <h4 class="card-title">@Html.ActionLink((string)Product.ProductName + "- See Reviews", "Details", new { ProductId = Product.ProductId })</h4>
+                <h6 class="card-subtitle mb-2 text-muted">$@Product.ProductCost dish from @Product.ProductCountry</h6>
+            </div>
+            <div class="card-footer">
+                <a class="card-link">@Html.ActionLink("Edit", "Update", new { ProductId = Product.ProductId })</a>
+                <a class="card-link">@Html.ActionLink("Delete", "Delete", new { ProductId = @Product.ProductId })</a>
+            </div>
+        </div>
+    }
+</div>
+<input type="button" class="btn btn-info" value="Add New Product" onclick="location.href='@Url.Action("Create")'" />
+
+
+ 
+
+

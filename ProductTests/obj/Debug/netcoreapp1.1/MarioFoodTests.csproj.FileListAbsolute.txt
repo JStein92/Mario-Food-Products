@@ -1,0 +1,14 @@
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\MarioFoodTests.deps.json
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\MarioFoodTests.runtimeconfig.json
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\MarioFoodTests.runtimeconfig.dev.json
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\MarioFoodTests.dll
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\MarioFoodTests.pdb
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\MarioFood.dll
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\bin\Debug\netcoreapp1.1\MarioFood.pdb
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\obj\Debug\netcoreapp1.1\MarioFoodTests.csprojResolveAssemblyReference.cache
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\obj\Debug\netcoreapp1.1\MarioFoodTests.AssemblyInfo.cs
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\obj\Debug\netcoreapp1.1\MarioFoodTests.dll
+C:\Users\Jonathan\documents\visual studio 2017\Projects\MarioFood\ProductTests\obj\Debug\netcoreapp1.1\MarioFoodTests.pdb
