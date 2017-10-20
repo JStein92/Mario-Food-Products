@@ -1,7 +1,7 @@
 ﻿@model MarioFood.Models.Product
 
 
-<div class="jumbotron"><h2>Edit @Model.ProductName Product</h2></div>
+<div class="page-header"><h2>Edit @Model.ProductName Product</h2></div>
 @using (Html.BeginForm())
 {
     @Html.HiddenFor(model => model.ProductId)
