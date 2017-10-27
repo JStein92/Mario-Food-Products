@@ -32,9 +32,10 @@ namespace MarioFood.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Product Product)
+        public IActionResult CreateNewProduct(string newProductName, string newProductCost, string newProductCountry)
         {
-            productRepo.Save(Product);
+            Product newProduct = new Product(newProductName, newProductCost, newProductCountry);
+            productRepo.Save(newProduct);
             return RedirectToAction("Index");
         }
 

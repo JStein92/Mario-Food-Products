@@ -12,6 +12,18 @@ namespace MarioFood.Models
         public string ProductCost { get; set; }
         public string ProductCountry { get; set; }
 
+        public Product(string newProductName, string newProductCost, string newProductCountry)
+        {
+            ProductName = newProductName;
+            ProductCost = newProductCost;
+            ProductCountry = newProductCountry;
+        }
+
+        public Product()
+        {
+
+        }
+
         public virtual ICollection<Review> Reviews { get; set; }
 
         public override bool Equals(System.Object otherProduct)

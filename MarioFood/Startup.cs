@@ -6,7 +6,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
 using MarioFood.Models;
 using Microsoft.Extensions.Configuration;
-
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 namespace MarioFood
 {
     public class Startup
@@ -28,11 +28,17 @@ namespace MarioFood
                     .AddDbContext<MarioFoodContext>(options =>
                                               options
                                                    .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+          .AddEntityFrameworkStores<MarioFoodContext>()
+          .AddDefaultTokenProviders();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            app.UseIdentity();
+
             loggerFactory.AddConsole();
 
             if (env.IsDevelopment())

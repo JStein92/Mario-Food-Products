@@ -1,14 +1,24 @@
-﻿using Microsoft.EntityFrameworkCore;
-
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 namespace MarioFood.Models
 {
-    public class MarioFoodContext : DbContext
+    public class MarioFoodContext : IdentityDbContext<ApplicationUser>
     {
-
-        public MarioFoodContext()
+        public MarioFoodContext(DbContextOptions options) : base(options)
         {
 
         }
+
+        public MarioFoodContext()
+        {
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
+ 
+
         public virtual DbSet<Product> Products { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
 
@@ -16,15 +26,6 @@ namespace MarioFood.Models
             => optionsBuilder
                 .UseMySql(@"Server=localhost;Port=3306;database=mario-food;uid=root;pwd=root;");
 
-        public MarioFoodContext(DbContextOptions<MarioFoodContext> options)
-        : base(options)
-        {
-        }
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            base.OnModelCreating(modelBuilder);
-        }
     }
 
 }

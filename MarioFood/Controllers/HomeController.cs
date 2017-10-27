@@ -33,7 +33,7 @@ namespace MarioFood.Controllers
 
             var threeMostRecentProducts = new List<Product>();
 
-            for (int i = 0; i < mostRecentProducts.Count && i < 2; i++)
+            for (int i = 0; i < mostRecentProducts.Count && i < 3; i++)
             {
                 threeMostRecentProducts.Add(mostRecentProducts[i]);
             }
@@ -50,7 +50,7 @@ namespace MarioFood.Controllers
 
             var threeMostReviewedProductIds = new List<int>();
 
-            for (int i = 0; i < mostReviewedIds.Count && i < 2; i++)
+            for (int i = 0; i < mostReviewedIds.Count && i < 3; i++)
             {
                 threeMostReviewedProductIds.Add(mostReviewedIds[i].Key);
             }

@@ -1,10 +1,14 @@
 ﻿@model List<MarioFood.Models.Product>
-
+@using System.Security.Claims
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-    <h2 class="page-header">Our Fine Products</h2>
+ 
+
+
+
+<h2 class="page-header">Our Fine Products</h2>
 
 
 <div class="about">
@@ -24,16 +28,70 @@
                 <h4 class="card-title">@Html.ActionLink((string)Product.ProductName + "- See Reviews", "Details", new { ProductId = Product.ProductId })</h4>
                 <h6 class="card-subtitle mb-2 text-muted">$@Product.ProductCost dish from @Product.ProductCountry</h6>
             </div>
+            
+            @if (User.Identity.IsAuthenticated)
+            {
             <div class="card-footer">
+
                 <a class="card-link">@Html.ActionLink("Edit", "Update", new { ProductId = Product.ProductId })</a>
                 <a class="card-link">@Html.ActionLink("Delete", "Delete", new { ProductId = @Product.ProductId })</a>
             </div>
+            }
         </div>
     }
 </div>
-<input type="button" class="btn btn-info" value="Add New Product" onclick="location.href='@Url.Action("Create")'" />
 
 
+
+@if (User.Identity.IsAuthenticated)
+{
+
+    <h2>Add a new Product</h2>
+    <form action="CreateNewProduct" class="new-product form-group">
+
+        <label for="newProductName">Product Name: </label>
+        <input type="text" name="newProductName" />
+
+        <label for="newProductCost">Product Cost ($): </label>
+        <input type="number" name="newProductCost" />
+
+        <label for="newProductCountry">Product Country: </label>
+        <input type="text" name="newProductCountry" />
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+}
+
+@section scripts
+{
+
+    <script type="text/javascript">
+            $(document).ready(function () {
+            $('.new-product').submit(function (event) {
+                event.preventDefault();
+
+                $.ajax({
+                  
+                    url: '@Url.Action("CreateNewProduct", "Product")',
+                    type: 'POST',
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function () {
+                        alert("test");
+                       
+                    }
+                 
+                });
+                alert("Product added! Refresh page to view results.")
+                var resultMessage = 'Product added!';
+                $('#result').html(resultMessage);
+            });
+        })
+    </script>
+
+}
  
 
 

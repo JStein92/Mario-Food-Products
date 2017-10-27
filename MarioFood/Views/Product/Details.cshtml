@@ -11,16 +11,18 @@
     @foreach (var review in @Model.Reviews)
     {
 
-        <div class="card card-inverse card-bg mb-3 text-center">
+        <div class="card card-inverse card-bg mb-3 text-center review">
             <div class="card-block">
                 <h1 style="color:black">@review.ReviewAuthor</h1>
                 <hr />
-                <blockquote class="card-blockquote">
+              
                     <h2>@review.ReviewRating/5</h2>
-                    <h2>@review.ReviewContentBody</h2>
-                   
+                    <p class="review-body">@review.ReviewContentBody</p>
+                   @if (User.Identity.IsAuthenticated)
+                   {
                     <h5>@Html.ActionLink("Delete", "Delete", "Review", new { ReviewId = review.ReviewId }) | @Html.ActionLink("Update", "Update", "Review", new { ReviewId = review.ReviewId })</h5>
-                </blockquote>
+                    }
+            
             </div>
         </div>
     }
