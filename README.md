@@ -2,7 +2,7 @@
 
 ## By Jonathan Stein
 
-#### _A mockup site for 'Mario's Specialty Food Products' made in DotNet with MVC_
+#### _A mockup site for 'Mario's Specialty Food Products' made in DotNet with MVC, with Authentication and Ajax requests_
 
 ## Site Specs
 
@@ -13,13 +13,22 @@
 - Landing Page
 
     - The landing page should include basic information about the company and should allow users to easily navigate to other areas of the site. This page should also include the three most recently added products and the three products with the most reviews.
-      Products
+- Products
 
 The site needs to include a products section with a list of the tasty products that Mario sells. Each product should be click-able with a detail view.
 
    - Site admins should be able to add, update and delete new products. (Don't worry about user authentication; assume everyone who visits the site is an admin for now).
     Users should be able to click an individual product to see its detail page, including its average rating.
     Users should be able to add a review to a product.
+    
+    
+   - Using .NET Core Identity, Employees at Mario's Speciality Food Products can register for admin accounts.
+   - Employees can log in and out of their accounts.
+   - Admin users are allowed to post new items.
+   - Anonymous users should not be able to post new items.
+   - Admin users can delete comments by any user.
+   - From the product details page, make adding a new review into an AJAX action.
+
 
 - Your site should include tests for the following:
 
