@@ -7,7 +7,8 @@ namespace MarioFood.Controllers
 {
     public class ReviewController : Controller
     {
-        private IReviewRepository ReviewRepo;
+        private IReviewRepository ReviewRepo = new EFReviewRepository();
+        
         private IProductRepository productRepo = new EFProductRepository();
         public ReviewController(IReviewRepository thisRepo = null)
         {

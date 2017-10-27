@@ -1,6 +1,12 @@
 ﻿@model MarioFood.Models.Product
 
 <div class="page-header"><h2>Reviews for @Model.ProductName Product</h2></div>
+
+@if (ViewBag.AverageRating !=null)
+{
+    <h3>Average rating: @ViewBag.AverageRating</h3>
+}
+
 <div class="card-deck">
     @foreach (var review in @Model.Reviews)
     {

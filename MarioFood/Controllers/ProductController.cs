@@ -58,6 +58,24 @@ namespace MarioFood.Controllers
                    .Include(x => x.Reviews)
                    .FirstOrDefault(x => x.ProductId == ProductId);
 
+            var ReviewList = thisProduct.Reviews.ToList();
+
+            if (ReviewList.Count > 0)
+            {
+                float ratingTotal = 0;
+                float ratingCount = 0;
+                //get average
+                foreach (var review in ReviewList)
+                {
+                    ratingTotal += review.ReviewRating;
+                    ratingCount++;
+                }
+                double AvgRating = ratingTotal / ratingCount;
+
+                ViewBag.AverageRating = AvgRating;
+            }
+     
+
             return View(thisProduct);
         }
 
